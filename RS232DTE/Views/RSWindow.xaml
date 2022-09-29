@@ -1,0 +1,185 @@
+﻿<Page
+    x:Class="RS232DTE.Views.RSWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:vm1="clr-namespace:RS232DTE.ViewModels"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <vm1:RSWindowViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Serial Port
+            </TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Transmission Speed
+            </TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Payload Size
+            </TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="3"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Parity Bits
+            </TextBlock>
+            <ComboBox Grid.Column="1" Grid.Row="0" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      ItemsSource="{Binding PortValues.PortNames, Mode=TwoWay}" 
+                      SelectedItem="{Binding PortProperties.PortName, Mode=TwoWay}"/>
+
+            <ComboBox Grid.Column="1" Grid.Row="1" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      ItemsSource="{Binding PortValues.BaudRates, Mode=OneTime}" 
+                      SelectedItem="{Binding PortProperties.BaudRate, Mode=TwoWay}"/>
+            <ComboBox Grid.Column="1" Grid.Row="2" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      ItemsSource="{Binding PortValues.BitCounts, Mode=OneTime}" 
+                      SelectedItem="{Binding PortProperties.BitCount, Mode=TwoWay}"/>
+            <ComboBox Grid.Column="1" Grid.Row="3" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      ItemsSource="{Binding PortValues.ParityTypes, Mode=OneTime}" 
+                      SelectedIndex="{Binding PortProperties.ParityIndex, Mode=TwoWay}"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="0" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Flow Control
+            </TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Terminating Character
+            </TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2"
+                       TextAlignment="Center" VerticalAlignment="Center">
+                Stop Bits Count
+            </TextBlock>
+
+            <ComboBox Grid.Column="1" Grid.Row="0" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      ItemsSource="{Binding PortValues.FlowControls, Mode=OneTime}" 
+                      SelectedIndex="{Binding PortProperties.FlowControlIndex, Mode=TwoWay}"/>
+
+            <ComboBox Grid.Column="1" Grid.Row="1" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      ItemsSource="{Binding PortValues.Terminators, Mode=OneWay}" 
+                      SelectedItem="{Binding PortProperties.Terminator, Mode=TwoWay}"/>
+
+            <ComboBox Grid.Column="1" Grid.Row="2" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      ItemsSource="{Binding PortValues.StopBits, Mode=OneTime}" 
+                      SelectedIndex="{Binding PortProperties.StopBitsIndex, Mode=TwoWay}"/>
+
+            <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    Width="100"
+                    MinWidth="100"
+                    MinHeight="20"
+                    Content="{Binding ConnectionString}"
+                    Command="{Binding ConnectCommand}"/>
+
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1" Margin="0 8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" TextAlignment="Center" 
+                       FontSize="28" VerticalAlignment="Center">
+                Message
+            </TextBlock>
+            <TextBox Grid.Row="1" Margin="8"
+                     Text="{Binding InputText, Mode=TwoWay}"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"/>
+            <Grid Grid.Row="2" Margin="8 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" HorizontalAlignment="Stretch"
+                        Command="{Binding ClsCommand}"
+                       VerticalAlignment="Stretch">
+                    Clear
+                </Button>
+                <Button Grid.Column="1" HorizontalAlignment="Stretch"
+                        Command="{Binding PingCommand}"
+                       VerticalAlignment="Stretch">
+                    Ping
+                </Button>
+                <Button Grid.Column="2" HorizontalAlignment="Stretch"
+                        Command="{Binding SendCommand}"
+                       VerticalAlignment="Stretch">
+                    Send
+                </Button>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1" Margin="0 8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" 
+                       Grid.ColumnSpan="3" TextAlignment="Center" 
+                       FontSize="28" VerticalAlignment="Center">
+                Response
+            </TextBlock>
+            <TextBox Grid.Column="0" Grid.Row="1" 
+                     Margin="8" IsReadOnly="True"
+                     Grid.ColumnSpan="3"
+                     x:Name="OutputTextbox" AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     Text="{Binding OutputText, Mode=OneWay}"/>
+
+            <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" Margin="8 0"
+                    Command="{Binding ClearOutputCommand}">
+                Clear
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

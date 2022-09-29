@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RS232DTE", "RS232DTE\RS232DTE.csproj", "{33E12541-B889-4976-88CF-17EFE80BC905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RS232Test", "RS232Test\RS232Test.csproj", "{C272B666-5D14-4FB2-ADED-10F56409ADB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33E12541-B889-4976-88CF-17EFE80BC905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E12541-B889-4976-88CF-17EFE80BC905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E12541-B889-4976-88CF-17EFE80BC905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E12541-B889-4976-88CF-17EFE80BC905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C272B666-5D14-4FB2-ADED-10F56409ADB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C272B666-5D14-4FB2-ADED-10F56409ADB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C272B666-5D14-4FB2-ADED-10F56409ADB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C272B666-5D14-4FB2-ADED-10F56409ADB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F462B77-CB03-46C8-A5C0-1DEB12031D58}
+	EndGlobalSection
+EndGlobal

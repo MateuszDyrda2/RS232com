@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "ek/PvYQAE6xTWZuvWnfj/SNgk6FZwBGqeGUD+lfw75mv+X8/1DMSLXMNDnMYHKz4v3W2Wk4O2cWGATzXc9NHHw==",
+  "success": true,
+  "projectFilePath": "D:\\custom\\RS232DTE\\RS232DTE\\RS232DTE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\7.0.0-preview.7.22375.6\\runtime.linux-arm.runtime.native.system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\7.0.0-preview.7.22375.6\\runtime.linux-arm64.runtime.native.system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\7.0.0-preview.7.22375.6\\runtime.linux-x64.runtime.native.system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\runtime.native.system.io.ports\\7.0.0-preview.7.22375.6\\runtime.native.system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\7.0.0-preview.7.22375.6\\runtime.osx-arm64.runtime.native.system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\7.0.0-preview.7.22375.6\\runtime.osx-x64.runtime.native.system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512",
+    "C:\\Users\\Mateusz.Dyrda\\.nuget\\packages\\system.io.ports\\7.0.0-preview.7.22375.6\\system.io.ports.7.0.0-preview.7.22375.6.nupkg.sha512"
+  ],
+  "logs": []
+}
